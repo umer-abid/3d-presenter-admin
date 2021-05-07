@@ -11,6 +11,7 @@ html {
 
 body {
   height: 100%;
+  font-family: "Ubuntu", sans-serif;
 }
 
 #wrapper {
@@ -24,8 +25,19 @@ body {
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 80px;
+  margin-left: 221px;
+  margin-top: 5%;
 }
-
+@media (max-width: 765px) {
+  #wrapper #content-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 80px;
+    margin-left: 91px;
+    margin-top: 15%;
+  }
+}
 body.fixed-nav #content-wrapper {
   margin-top: 56px;
   padding-left: 90px;
@@ -380,8 +392,34 @@ body.sidebar-toggled footer.sticky-footer {
   padding-top: 5vh;
   padding-left: 20vw;
 }
-@media (max-width: 990px){
+@media (max-width: 990px) {
   .formClass {
     padding-top: 0;
     padding-left: 0;
+  }
+}
+.navbar-nav {
+  position: fixed;
+  z-index: 100;
+  height: 100vh;
+  margin-top: 55px;
+}
+.navbar-expand {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.formClasssupervisor {
+  padding-top: 5vh;
+  padding-left: 20vw;
+}
+@media (max-width: 990px) {
+  .formClasssupervisor {
+    padding-top: 0;
+    padding-left: 15vw;
+  }
+}
+.pdfIconStyle {
+  font-size: 15rem;
+  color: #b30202;
 }
