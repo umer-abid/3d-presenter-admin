@@ -28,10 +28,6 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
-      rel="stylesheet"
-    />
   </head>
 
   <body id="page-top">
@@ -85,7 +81,10 @@
           </ol>
           <div class="row formClass">
             <div class="col-12">
-              <form>
+              <form
+                method="POST"
+                action="http://24c64bdea0ca.ngrok.io/rooms/create/"
+              >
                 <div class="col-md-12 col-lg-8">
                   <div class="form-group">
                     <label for="newRoomName">Enter Room Name</label>
@@ -93,13 +92,15 @@
                       type="text"
                       class="form-control"
                       id="newRoomName"
-                      name="newRoomName"
+                      name="name"
                       placeholder="Enter Room Name"
                       required
                     />
                   </div>
                 </div>
-                <div class="col-md-12 col-lg-8">
+                <!-- Room Image,video and docs commented for test purpose and all
+                done at Room Editing phase -->
+                <!-- <div class="col-md-12 col-lg-8">
                   <div class="form-group">
                     <label for="newRoomImage">Upload Room Images</label>
                     <input
@@ -140,7 +141,7 @@
                       required
                     />
                   </div>
-                </div>
+                </div> -->
                 <div class="col-md-12 col-lg-8">
                   <div class="form-group">
                     <input

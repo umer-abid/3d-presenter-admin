@@ -22,10 +22,6 @@
       type="text/css"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
-      rel="stylesheet"
-    />
 
     <!-- Page level plugin CSS-->
     <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet" />
@@ -100,7 +96,8 @@
                     <input
                       type="email"
                       class="form-control"
-                      id="exampleFormControlInput1"
+                      id="invitationEmail"
+                      name="invitationEmail"
                       placeholder="name@example.com"
                       required
                     />
@@ -108,8 +105,9 @@
                 </div>
                 <div class="col-md-12 col-lg-8">
                   <div class="form-group">
-                    <label for="exampleFormControlSelect1">Select Room</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <label for="sendInvitationRoomValue">Select Room</label>
+                    <select class="form-control" id="sendInvitationRoomValue">
+                      <option>Select Room</option>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -121,9 +119,10 @@
                 <div class="col-md-12 col-lg-8">
                   <div class="form-group">
                     <input
-                      type="submit"
+                      type="button"
                       value="Send Invitation"
                       class="form-control btn btn-primary"
+                      onclick="sendInvitation()"
                     />
                   </div>
                 </div>
@@ -204,6 +203,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
+    <script src="js/pages Js/sendInvitation.js"></script>
 
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
