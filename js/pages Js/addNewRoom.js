@@ -1,4 +1,9 @@
 function getQueryParameter() {
+  console.log(
+    "Entered Room value is ",
+    document.getElementById("newRoomName").value
+  );
+  debugger;
   let params = new URLSearchParams(window.location.search);
 
   let notify = params.get("notify");
