@@ -392,7 +392,7 @@ body.sidebar-toggled footer.sticky-footer {
   padding-top: 5vh;
   padding-left: 20vw;
 }
-<<<<<<< HEAD
+
 @media (max-width: 990px) {
   .formClass {
     padding-top: 0;
@@ -428,10 +428,3 @@ body.sidebar-toggled footer.sticky-footer {
   max-width: 620px;
   margin: 1.75rem auto;
 }
-=======
-@media (max-width: 990px){
-  .formClass {
-    padding-top: 0;
-    padding-left: 0;
-}
->>>>>>> 2650f4d95cdb6c2dbb191c32258c26560b70ac5b
