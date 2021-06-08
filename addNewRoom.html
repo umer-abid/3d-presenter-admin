@@ -30,7 +30,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
   </head>
 
-  <body id="page-top">
+  <body id="page-top" onload="getQueryParameter()">
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
       <a class="navbar-brand mr-1" href="index.html">3d presenter Admin</a>
 
@@ -42,7 +42,14 @@
         <i class="fas fa-bars"></i>
       </button>
       <div class="col">
-        <button class="btn btn-success float-right">Log out</button>
+        <button
+          type="button"
+          class="btn btn-secondary mt-1 mt-md-0 mt-xl-0 float-right"
+          data-toggle="modal"
+          data-target="#logoutModal"
+        >
+          Log Out<i class="ml-2 fas fa-sign-out-alt"></i>
+        </button>
       </div>
     </nav>
 
@@ -79,6 +86,7 @@
             <li class="breadcrumb-item active">Rooms</li>
             <li class="breadcrumb-item active"><b>New Room</b></li>
           </ol>
+          <div id="created"></div>
           <div class="row formClass">
             <div class="col-12">
               <form
@@ -98,50 +106,7 @@
                     />
                   </div>
                 </div>
-                <!-- Room Image,video and docs commented for test purpose and all
-                done at Room Editing phase -->
-                <!-- <div class="col-md-12 col-lg-8">
-                  <div class="form-group">
-                    <label for="newRoomImage">Upload Room Images</label>
-                    <input
-                      accept="image/*"
-                      type="file"
-                      class="form-control-file border rounded p-2"
-                      id="newRoomImages"
-                      name="newRoomImages"
-                      multiple
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-8">
-                  <div class="form-group">
-                    <label for="newRoomVideos">Upload Room Videos</label>
-                    <input
-                      type="file"
-                      accept="video/*"
-                      class="form-control-file border rounded p-2"
-                      id="newRoomVideos"
-                      name="newRoomVideos"
-                      multiple
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-8">
-                  <div class="form-group">
-                    <label for="newRoomDocs">Upload Room Documents</label>
-                    <input
-                      type="file"
-                      class="form-control-file border rounded p-2"
-                      accept=".pdf"
-                      id="newRoomDocs"
-                      name="newRoomDocs"
-                      multiple
-                      required
-                    />
-                  </div>
-                </div> -->
+
                 <div class="col-md-12 col-lg-8">
                   <div class="form-group">
                     <input
@@ -228,6 +193,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
+    <script src="js/pages Js/addNewRoom.js"></script>
 
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
