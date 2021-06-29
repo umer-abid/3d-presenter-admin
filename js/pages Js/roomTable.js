@@ -1,37 +1,66 @@
 $(document).ready(function () {
-  var ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  var ldLength = ids.length;
-  if (ldLength != 0) {
+  var data = [];
+  var settings = {
+    url: "http://127.0.0.1:8000/rooms",
+    method: "GET",
+    timeout: 0,
+  };
+
+  $.ajax(settings).done(function (response) {
     debugger;
-    for (var i = 0; i < ids.length; i++) {
-      var table_row =
-        `<tr>
-    <td>` +
-        ids[i] +
-        `</td>
-    <td>Science</td>
-    <td>12/01/2001</td>
+
+    data = response;
+    console.log("Data is " + data);
+
+    var dataLength = data.length;
+    console.log("Data Length is :", dataLength);
+    if (dataLength != 0) {
+      debugger;
+      for (var i = 0; i < data.length; i++) {
+        var table_row =
+          `<tr>
+    <td class="text-center">` +
+          data[i].id +
+          `</td>
+    <td class="text-center">` +
+          data[i].name +
+          `</td>
+    <td class="text-center">` +
+          data[i].created_at +
+          `</td>
     <td class="text-center">
-      <a href="./editRoom.html">
+    <a href="./editRoom.html?Roomid=` +
+          data[i].id +
+          `">
+      
         <button id="edit_button` +
-        ids[i] +
-        `" class="btn btn-success" value = '` +
-        ids[i] +
-        `'>
+          data[i].id +
+          `" class="btn btn-success" value = '` +
+          data[i].id +
+          `'>
           Edit<i class="ml-1 far fa-edit"></i>
+          
         </button>
       </a>
       <button value=` +
-        ids[i] +
-        ` type="button" id="delete_button` +
-        ids[i] +
-        `" class="btn btn-danger mt-1 mt-md-0 mt-xl-0" data-toggle="modal" data-target="#deleteModal">
+          data[i] +
+          ` type="button" id="delete_button` +
+          data[i] +
+          `" class="btn btn-danger mt-1 mt-md-0 mt-xl-0" data-toggle="modal" data-target="#deleteModal"
+          
+          onclick="delete_room(` +
+          data[i].id +
+          `)"
+          >
         Delete<i class="ml-1 fas fa-trash-alt"></i>
       </button>
     </td>
   </tr>`;
-      $("#roomTable tbody").append(table_row);
-    }
-  } else $("#roomTable tbody").append("No Content Found");
-  $("#roomTable").DataTable();
+        if (!table_row) {
+          $("#roomTable tbody").append("Loading Content");
+        } else $("#roomTable tbody").append(table_row);
+      }
+    } else $("#roomTable tbody").append("No Content Found");
+    $("#roomTable").DataTable();
+  });
 });

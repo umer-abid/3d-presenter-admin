@@ -1,8 +1,24 @@
-function edit_row(no) {
-  document.getElementById("edit_button" + no) = "test";
-  
+function edit_row() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const roomid = urlParams.get("Roomid");
+  alert("Hello ROom id is " + roomid);
+  document.getElementById("imgName").value = roomid;
+  document.getElementById("docName").value = roomid;
+  document.getElementById("videoName").value = roomid;
 }
-function delete_row(no)
-{
- document.getElementById("delete_button"+no).outerHTML="test";
+function delete_room(id) {
+  debugger;
+  console.log("Deleted Room number is " + id);
+  var deleteRoom = {
+    url: `http://127.0.0.1:8000/room/` + id,
+    method: "DELETE",
+    timeout: 0,
+  };
+
+  $.ajax(deleteRoom).done(function (response) {
+    alert("Room Deleted Successfully : " + id);
+
+    console.log(response);
+    window.location.reload();
+  });
 }

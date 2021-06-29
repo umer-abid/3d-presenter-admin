@@ -134,92 +134,15 @@
                             class="btn btn-primary float-right mt-1 mt-md-0 mt-xl-0"
                             data-toggle="modal"
                             data-target="#addNewImage"
+                            onclick="edit_row()"
                           >
                             + Add Image
                           </button>
                         </div>
                       </div>
-                      <div class="row" style="display: flex; flex-wrap: wrap;">
-                        <div class="col-sm-6 col-md-4 col-lg-3 mt-2">
-                          <div class="card" style="width: 100%">
-                            <img
-                              src="https://i.pinimg.com/originals/0f/9f/bc/0f9fbc273e1f2c2f8fb5371c71226040.jpg"
-                              class="card-img-top"
-                              alt="..."
-                            />
-                            <div class="card-body text-center border rounded">
-                              <button
-                                type="button"
-                                class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
-                                data-toggle="modal"
-                                data-target="#deleteImage"
-                              >
-                                Delete
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 mt-2">
-                          <div class="card" style="width: 100%">
-                            <img
-                              src="https://i.pinimg.com/originals/0f/9f/bc/0f9fbc273e1f2c2f8fb5371c71226040.jpg"
-                              class="card-img-top"
-                              alt="..."
-                            />
-                            <div class="card-body text-center border rounded">
-                              <button
-                                type="button"
-                                class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
-                                data-toggle="modal"
-                                data-target="#deleteImage"
-                              >
-                                Delete
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 mt-2">
-                          <div class="card" style="width: 100%">
-                            <img
-                              src="https://i.pinimg.com/originals/0f/9f/bc/0f9fbc273e1f2c2f8fb5371c71226040.jpg"
-                              class="card-img-top"
-                              alt="..."
-                            />
-                            <div class="card-body text-center border rounded">
-                              <button
-                                type="button"
-                                class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
-                                data-toggle="modal"
-                                data-target="#deleteImage"
-                              >
-                                Delete
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 mt-2">
-                          <div class="card" style="width: 100%">
-                            <img
-                              src="https://i.pinimg.com/originals/0f/9f/bc/0f9fbc273e1f2c2f8fb5371c71226040.jpg"
-                              class="card-img-top"
-                              alt="..."
-                            />
-                            <div class="card-body text-center border rounded">
-                              <button
-                                type="button"
-                                class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
-                                data-toggle="modal"
-                                data-target="#deleteImage"
-                              >
-                                Delete
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
+                      <div class="row" id="imageMap" style="display: flex; flex-wrap: wrap;">
+                        
+                        
                       </div>
                     </div>
                   </div>
@@ -254,110 +177,20 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-12">
-                        <h4>Room Name : X</h4>
+                        
                         <button
                           type="button"
                           class="btn btn-primary float-right mt-1 mt-md-0 mt-xl-0"
                           data-toggle="modal"
                           data-target="#addNewVideo"
+                          onclick="edit_row()"
                         >
                           + Add Video
                         </button>
                       </div>
                     </div>
-                    <div class="row" style="display: flex; flex-wrap: wrap;">
-                      <div class="col-sm-6 col-md-4 col-lg-3 mt-2">
-                        <div class="card" style="width: 100%">
-                          <img
-                            src="https://i.pinimg.com/originals/0f/9f/bc/0f9fbc273e1f2c2f8fb5371c71226040.jpg"
-                            class="card-img-top"
-                            alt="..."
-                          />
-                          <div>
-                            <h5 class="m-2 text-center videoTag">Video Tag</h5>
-                          </div>
-                          <div class="card-body text-center border rounded">
-                            <button
-                              type="button"
-                              class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
-                              data-toggle="modal"
-                              data-target="#deleteVideo"
-                            >
-                              Delete
-                              <i class="fa fa-trash" aria-hidden="true"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-lg-3 mt-2">
-                        <div class="card" style="width: 100%">
-                          <img
-                            src="https://i.pinimg.com/originals/0f/9f/bc/0f9fbc273e1f2c2f8fb5371c71226040.jpg"
-                            class="card-img-top"
-                            alt="..."
-                          />
-                          <div>
-                            <h5 class="m-2 text-center videoTag">Video Tag</h5>
-                          </div>
-                          <div class="card-body text-center border rounded">
-                            <button
-                              type="button"
-                              class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
-                              data-toggle="modal"
-                              data-target="#deleteImage"
-                            >
-                              Delete
-                              <i class="fa fa-trash" aria-hidden="true"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-lg-3 mt-2">
-                        <div class="card" style="width: 100%">
-                          <img
-                            src="https://i.pinimg.com/originals/0f/9f/bc/0f9fbc273e1f2c2f8fb5371c71226040.jpg"
-                            class="card-img-top"
-                            alt="..."
-                          />
-                          <div>
-                            <h5 class="m-2 text-center videoTag">Video Tag</h5>
-                          </div>
-                          <div class="card-body text-center border rounded">
-                            <button
-                              type="button"
-                              class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
-                              data-toggle="modal"
-                              data-target="#deleteImage"
-                            >
-                              Delete
-                              <i class="fa fa-trash" aria-hidden="true"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-lg-3 mt-2">
-                        <div class="card" style="width: 100%">
-                          <img
-                            src="https://i.pinimg.com/originals/0f/9f/bc/0f9fbc273e1f2c2f8fb5371c71226040.jpg"
-                            class="card-img-top"
-                            alt="..."
-                          />
-                          <div>
-                            <h5 class="m-2 text-center videoTag">Video Tag</h5>
-                          </div>
-                          <div class="card-body text-center border rounded">
-                            <button
-                              type="button"
-                              class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
-                              data-toggle="modal"
-                              data-target="#deleteImage"
-                            >
-                              Delete
-                              <i class="fa fa-trash" aria-hidden="true"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
+                    <div class="row" id="videoMap" style="display: flex; flex-wrap: wrap;">
+                      
                     </div>
                   </div>
                   </div>
@@ -392,12 +225,13 @@
                     <div class="card-body">
                     <div class="row">
                       <div class="col-12">
-                        <h4>Room Name : X</h4>
+                        
                         <button
                           type="button"
                           class="btn btn-primary float-right mt-1 mt-md-0 mt-xl-0"
                           data-toggle="modal"
                           data-target="#addNewDoc"
+                          onclick="edit_row()"
                         >
                           + Add Document
                         </button>
@@ -415,8 +249,7 @@
                             <button
                               type="button"
                               class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
-                              data-toggle="modal"
-                              data-target="#deleteDoc"
+                              
                             >
                               Delete
                               <i class="fa fa-trash" aria-hidden="true"></i>
@@ -435,8 +268,7 @@
                             <button
                               type="button"
                               class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
-                              data-toggle="modal"
-                              data-target="#deleteDoc"
+                              
                             >
                               Delete
                               <i class="fa fa-trash" aria-hidden="true"></i>
@@ -455,8 +287,7 @@
                             <button
                               type="button"
                               class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
-                              data-toggle="modal"
-                              data-target="#deleteDoc"
+                              
                             >
                               Delete
                               <i class="fa fa-trash" aria-hidden="true"></i>
@@ -475,8 +306,7 @@
                             <button
                               type="button"
                               class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
-                              data-toggle="modal"
-                              data-target="#deleteDoc"
+                              
                             >
                               Delete
                               <i class="fa fa-trash" aria-hidden="true"></i>
@@ -516,7 +346,7 @@
     </a>
 
     <!-- Delete Image Modal -->
-    <div
+    <!-- <div
       class="modal fade"
       id="deleteImage"
       tabindex="-1"
@@ -551,7 +381,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Add Image Modal -->
     <div
@@ -567,20 +397,18 @@
         <div class="modal-content">
           
           <div class="alert text-center" role="alert">
-            <form action="http://24c64bdea0ca.ngrok.io">
+            <form action="http://127.0.0.1:8000/rooms/images/add/" method="POST" enctype="multipart/form-data">
               <div class="col-md-12 col-lg-12">
                 <div class="form-group">
-                  <label for="newRoomImage">Enter Room Id</label>
+                  
                   <input
               
-                  type="text"
+                  type="hidden"
                   class="form-control-file border rounded p-2"
-                  id="name"
-                  name="roomName"
-                  placeholder="Enter Room Id"
+                  id="imgName"
+                  name="room"
+                  placeholder="Room Id"
                   
-                  
-                  required
                 />
                   <label for="newRoomImage">Upload Room Images</label>
                  
@@ -589,9 +417,10 @@
                     type="file"
                     class="form-control-file border rounded p-2"
                     id="newRoomImages"
-                    name="newRoomImages"
+                    name="image"
                     multiple
                     required
+                    autocomplete="off"
                   />
                 </div>
               </div>
@@ -615,7 +444,7 @@
     
 
 <!-- Delete Video Modal -->
-<div
+<!-- <div
 class="modal fade"
 id="deleteVideo"
 tabindex="-1"
@@ -650,7 +479,7 @@ aria-hidden="true"
     </div>
   </div>
 </div>
-</div>
+</div> -->
 
 <!-- Add Video Modal -->
 <div
@@ -666,30 +495,29 @@ aria-hidden="true"
   <div class="modal-content"> 
     
     <div class="alert text-center" role="alert">
-      <form action="http://24c64bdea0ca.ngrok.io" method="POST">
+      <form action="http://127.0.0.1:8000/rooms/videos/add/" method="POST" enctype="multipart/form-data">
         <div class="col-md-12 col-lg-12">
           <div class="form-group">
-            <label for="newRoomImage">Enter Room Id</label>
-                  <input
-              
-                  type="text"
+            
+                  <input 
+                  type="hidden"
                   class="form-control-file border rounded p-2"
-                  id="name"
-                  name="roomName"
-                  placeholder="Enter Room ID"
+                  id="videoName"
+                  name="room"
+                  placeholder="Room ID"
                   
-                  required
                 />
-            <label for="newRoomImage">Upload Room Videos</label>
+            <label for="newRoomVideo">Upload Room Videos</label>
            
             <input
               accept="video/*"
               type="file"
               class="form-control-file border rounded p-2"
               id="RoomImages"
-              name="newRoomImages"
+              name="video"
               multiple
               required
+              autocomplete="off"
             />
           </div>
         </div>
@@ -716,7 +544,7 @@ aria-hidden="true"
 </div>
 
 <!-- Delete Doc Modal -->
-<div
+<!-- <div
 class="modal fade"
 id="deleteDoc"
 tabindex="-1"
@@ -751,7 +579,7 @@ aria-hidden="true"
     </div>
   </div>
 </div>
-</div>
+</div> -->
 
 <!-- Add Document Modal -->
 <div
@@ -767,16 +595,16 @@ aria-hidden="true"
   <div class="modal-content">
     
     <div class="alert text-center" role="alert">
-      <form action="">
+      <form action="http://127.0.0.1:8000/rooms/documents/add/" method="POST" enctype="multipart/form-data">
         <div class="col-md-12 col-lg-12">
           <div class="form-group">
-            <label for="newRoomImage">Enter Room Id</label>
+           
                   <input
               
-                  type="text"
+                  type="hidden"
                   class="form-control-file border rounded p-2"
-                  id="name"
-                  name="roomName"
+                  id="docName"
+                  name="room"
                   placeholder="Enter Room ID"
                   required
                 />
@@ -787,9 +615,10 @@ aria-hidden="true"
               type="file"
               class="form-control-file border rounded p-2"
               id="newRoomImages"
-              name="newRoomImages"
+              name="document"
               multiple
               required
+              autocomplete="off"
             />
           </div>
         </div>
@@ -867,6 +696,10 @@ aria-hidden="true"
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
+    <!-- Edit Delete js -->
+    <script src="js/pages Js/editDeleteRoom.js"></script>
+    <script src="js/pages Js/imgVidDocLoad.js"></script>
+    <script src="js/pages Js/imgVidDocDelete.js"></script>
 
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
