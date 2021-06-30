@@ -424,6 +424,10 @@ body.sidebar-toggled footer.sticky-footer {
   font-size: 10rem;
   color: #b30202;
 }
+.video-icon {
+  font-size: 7rem;
+  color: #b30202;
+}
 .modal-dialog {
   max-width: 620px;
   margin: 1.75rem auto;
@@ -431,4 +435,11 @@ body.sidebar-toggled footer.sticky-footer {
 .card-img-top {
   height: 20vh;
   width: 100%;
+}
+.video-anchor {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.play-button-div {
+  text-align: center;
 }

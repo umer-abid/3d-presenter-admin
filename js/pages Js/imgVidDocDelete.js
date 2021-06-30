@@ -39,6 +39,7 @@ function deletedocbyid(docid, roomid) {
   $.ajax(DocDelete).done(function (response) {
     console.log(response);
     alert("Document Deleted Successfully");
+    window.Location.reload();
   });
 }
 //   Delete Video Function
@@ -60,5 +61,6 @@ function deletevideobyid(vidid, roomid) {
   $.ajax(VidDelete).done(function (response) {
     console.log(response);
     alert("Video Deleted Successfully");
+    window.location.reload();
   });
 }

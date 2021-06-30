@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var settingsImg = {
     url: `http://127.0.0.1:8000/rooms/images?roomId=` + roomid,
     method: "GET",
+    async: false,
     timeout: 0,
     headers: {
       "Content-Type": "application/json",
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var settingsVideo = {
     url: `http://127.0.0.1:8000/rooms/videos?roomId=` + roomid,
     method: "GET",
+    async: false,
     timeout: 0,
     headers: {
       "Content-Type": "application/json",
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var settingsDoc = {
     url: `http://127.0.0.1:8000/rooms/documents?roomId=` + roomid,
     method: "GET",
+    async: false,
     timeout: 0,
     headers: {
       "Content-Type": "application/json",
@@ -32,11 +35,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // Image Load AJax Call
 
-  $.ajax(settingsImg).done(function (response) {
-    debugger;
-
-    imageData = response;
-    console.log("Data is " + imageData[0].id);
+  $.ajax(settingsImg).done(function (response1) {
+    imageData = response1;
+    // console.log("Data is " + imageData[0].id);
     if (imageData.length != 0) {
       for (var i = 0; i < imageData.length; i++) {
         let ImageData =
@@ -73,40 +74,40 @@ document.addEventListener("DOMContentLoaded", function (event) {
     } else $("#imageMap").append("No Content Found");
   });
   // Video Load AJax Call
-  $.ajax(settingsVideo).done(function (response) {
-    debugger;
-
-    videoData = response;
-    console.log("Data is " + videoData[0].id);
+  $.ajax(settingsVideo).done(function (response2) {
+    videoData = response2;
+    // console.log("Data is " + videoData[0].id);
     if (videoData.length != 0) {
       for (var i = 0; i < videoData.length; i++) {
         let VideoData =
           `
           <div class="col-sm-6 col-md-4 col-lg-3 mt-2">
-                        <div class="card" style="width: 100%">
-                          <img
-                            src="https://i.pinimg.com/originals/0f/9f/bc/0f9fbc273e1f2c2f8fb5371c71226040.jpg"
-                            class="card-img-top"
-                            alt="..."
-                          />
-                          <div>
-                          <button
-                          type="button"
-                          class="btn btn-primary"
-                          
-                        >
-                          <a target='_blank' href=` +
-          videoData[i].video +
-          `>play</a>
-                          <i class="fa fa-play" aria-hidden="true"></i>
-                        </button>
-                          </div>
+                        <div class="card" style="width: 100%,text-align:center">
+                        <i class="text-center fas fa-video video-icon"></i>
                           <div class="card-body text-center border rounded">
+                          <a class="video-anchor" target='_blank' href=` +
+          videoData[i].video +
+          `>
+                                          <button
+                                          type="button"
+                                          class="btn btn-success"
+                                          
+                                        >
+                                          play
+                                          <i class="fa fa-play" aria-hidden="true"></i>
+                                        </button>
+                                        </a>
                             <button
                               type="button"
-                              class="btn btn-primary mt-1 mt-md-0 mt-xl-0"
-                              
-                            >
+                              class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
+                              onclick="deletevideobyid(` +
+          videoData[i].id +
+          `,` +
+          roomid +
+          `)"
+                                                    
+                                                  >  
+                            
                               Delete
                               <i class="fa fa-trash" aria-hidden="true"></i>
                             </button>
@@ -119,45 +120,45 @@ document.addEventListener("DOMContentLoaded", function (event) {
     } else $("#videoMap").append("No Content Found");
   });
   // Document Load AJax Call
-  //   $.ajax(settingsDoc).done(function (response) {
-  //     debugger;
+  $.ajax(settingsDoc).done(function (response3) {
+    docData = response3;
+    // console.log("Data is " + docData[0].id);
+    if (docData.length != 0) {
+      for (var i = 0; i < docData.length; i++) {
+        var DocData =
+          `
+          <div class="col-sm-6 col-md-4 col-lg-3 mt-2">
+                        <div class="card text-center" style="width: 100%">
+                          <i class="m-1 fas fa-file-pdf pdfIconStyle"></i>
+                          <div>
+                            <h5 class="m-2 text-center DocTag">` +
+          docData[i].title +
+          `</h5>
+                          </div>
+                          <div class="card-body text-center border rounded">
+                           <a class='btn btn-primary' href=` +
+          docData[i].document +
+          ` target="_blank">View Document</a>
+                            <button
+                              type="button"
+                              class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
+                              onclick="deletedocbyid(` +
+          docData[i].id +
+          `,` +
+          roomid +
+          `)"
+                                                    
+                                                  > 
+                              Delete
+                              <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+              `;
 
-  //     docData = response;
-  //     console.log("Data is " + docData[0].id);
-  //     if (docData.length != 0) {
-  //       for (var i = 0; i < docData.length; i++) {
-  //         var DocData =
-  //           `
-  //             <div class="col-sm-6 col-md-4 col-lg-3 mt-2">
-  //                           <div class="card" style="width: 100%">
-  //                             <img
-  //                               src="` +
-  //           docData[i].image +
-  //           `"
-  //                               class="card-img-top"
-  //                               alt="..."
-  //                             />
-  //                             <div class="card-body text-center border rounded">
-  //                               <button
-  //                                 type="button"
-  //                                 class="btn btn-danger mt-1 mt-md-0 mt-xl-0"
-  //                                 data-toggle="modal"
-  //                                 data-target="#deleteImage"
-  //                               >
-  //                                 Delete
-  //                                 <i class="fa fa-trash" aria-hidden="true"></i>
-  //                               </button>
-  //                             </div>
-  //                           </div>
-  //                         </div>
-  //             `;
-  //         if (!DocData) {
-  //           // $("#imageMap").append("Loading Content");
-  //           // document.getElementById("imageMap").innerHTML("Loading Content");
-  //         }
-  //         // else $("#imageMap").append(ImageData);
-  //       }
-  //     }
-  //     // else $("#imageMap").append("No Content Found");
-  //   });
+        $("#docMap").append(DocData);
+      }
+    } else $("#docMap").append("No Content Found");
+  });
 });
