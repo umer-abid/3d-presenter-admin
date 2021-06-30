@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var videoData = [];
   var docData = [];
   var settingsImg = {
-    url: `http://127.0.0.1:8000/rooms/images?roomId=` + roomid,
+    url: `https://intervideo-showroom.de/django/rooms/images?roomId=` + roomid,
     method: "GET",
     async: false,
     timeout: 0,
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     },
   };
   var settingsVideo = {
-    url: `http://127.0.0.1:8000/rooms/videos?roomId=` + roomid,
+    url: `https://intervideo-showroom.de/django/rooms/videos?roomId=` + roomid,
     method: "GET",
     async: false,
     timeout: 0,
@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     },
   };
   var settingsDoc = {
-    url: `http://127.0.0.1:8000/rooms/documents?roomId=` + roomid,
+    url:
+      `https://intervideo-showroom.de/django/rooms/documents?roomId=` + roomid,
     method: "GET",
     async: false,
     timeout: 0,

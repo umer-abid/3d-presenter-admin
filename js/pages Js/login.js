@@ -9,7 +9,7 @@ function adminLogin() {
   });
   console.log("Prided Data is " + loginData);
   var settings = {
-    url: "http://127.0.0.1:8000/login/",
+    url: "https://intervideo-showroom.de/django/login/",
     method: "POST",
     timeout: 0,
     headers: {

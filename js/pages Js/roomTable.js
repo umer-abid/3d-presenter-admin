@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var data = [];
   var settings = {
-    url: "http://127.0.0.1:8000/rooms",
+    url: "https://intervideo-showroom.de/django/rooms",
     method: "GET",
     timeout: 0,
   };

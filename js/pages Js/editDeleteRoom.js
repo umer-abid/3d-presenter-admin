@@ -10,7 +10,7 @@ function delete_room(id) {
   debugger;
   console.log("Deleted Room number is " + id);
   var deleteRoom = {
-    url: `http://127.0.0.1:8000/room/` + id,
+    url: `https://intervideo-showroom.de/django/room/` + id,
     method: "DELETE",
     timeout: 0,
   };

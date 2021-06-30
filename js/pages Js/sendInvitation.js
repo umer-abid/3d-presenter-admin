@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var room_data = {
-    url: "http://127.0.0.1:8000/rooms",
+    url: "https://intervideo-showroom.de/django/rooms",
     method: "GET",
     timeout: 0,
     headers: {
@@ -30,7 +30,7 @@ function sendInvitation() {
   form.append("useremail", email);
   form.append("roomid", selectedRoom);
   var settings = {
-    url: "http://127.0.0.1:8000/invitation/",
+    url: "https://intervideo-showroom.de/django/invitation/",
     method: "POST",
     timeout: 0,
     processData: false,

@@ -5,7 +5,11 @@ function deleteimgbyid(imgid, roomid) {
   console.log("Image Deleted" + imgid + roomid);
   var form = new FormData();
   var ImgDelete = {
-    url: `http://127.0.0.1:8000/rooms/images/` + imgid + `?roomId=` + roomid,
+    url:
+      `https://intervideo-showroom.de/django/rooms/images/` +
+      imgid +
+      `?roomId=` +
+      roomid,
     method: "DELETE",
     timeout: 0,
     processData: false,
@@ -27,7 +31,11 @@ function deletedocbyid(docid, roomid) {
   console.log("Document Deleted" + docid + roomid);
   var form = new FormData();
   var DocDelete = {
-    url: `http://127.0.0.1:8000/rooms/documents/` + docid + `?roomId=` + roomid,
+    url:
+      `https://intervideo-showroom.de/django/rooms/documents/` +
+      docid +
+      `?roomId=` +
+      roomid,
     method: "DELETE",
     timeout: 0,
     processData: false,
@@ -49,7 +57,11 @@ function deletevideobyid(vidid, roomid) {
   console.log("Video Deleted" + vidid + roomid);
   var form = new FormData();
   var VidDelete = {
-    url: `http://127.0.0.1:8000/rooms/videos/` + vidid + `?roomId=` + roomid,
+    url:
+      `https://intervideo-showroom.de/django/rooms/videos/` +
+      vidid +
+      `?roomId=` +
+      roomid,
     method: "DELETE",
     timeout: 0,
     processData: false,
